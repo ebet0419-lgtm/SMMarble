@@ -5,7 +5,7 @@
 #define LIST_END            -1
 #define MAX_LIST            LISTNO_OFFSET_GRADE + MAX_PLAYER
 
-// ¿¬°á ¸®½ºÆ®¸¦ À§ÇÑ ³ëµå Á¤ÀÇ
+// ì—°ê²° ë¦¬ìŠ¤íŠ¸ë¥¼ ìœ„í•œ ë…¸ë“œ ì •ì˜
 typedef struct node {
     int index;
     void* obj;
@@ -16,7 +16,7 @@ typedef struct node {
 static node_t* list_database[MAX_LIST];
 static int list_cnt[MAX_LIST];
 
-// µ¥ÀÌÅÍ Ãß°¡ ÇÔ¼ö
+// ë°ì´í„° ì¶”ê°€ í•¨ìˆ˜
 int smmdb_addTail(int list_nr, void* obj) {
     node_t* newNode = (node_t*)malloc(sizeof(node_t));
     newNode->obj = obj;
@@ -37,12 +37,12 @@ int smmdb_addTail(int list_nr, void* obj) {
     return newNode->index;
 }
 
-// µ¥ÀÌÅÍ °³¼ö ¹İÈ¯
+// ë°ì´í„° ê°œìˆ˜ ë°˜í™˜
 int smmdb_len(int list_nr) {
     return list_cnt[list_nr];
 }
 
-// µ¥ÀÌÅÍ °¡Á®¿À±â
+// ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
 void* smmdb_getData(int list_nr, int index) {
     node_t* temp = list_database[list_nr];
     while (temp != NULL) {
@@ -52,8 +52,8 @@ void* smmdb_getData(int list_nr, int index) {
     return NULL;
 }
 
-// µ¥ÀÌÅÍ »èÁ¦ (ÇÊ¿ä½Ã »ç¿ë)
+// ë°ì´í„° ì‚­ì œ
 int smmdb_deleteData(int list_nr, int index) {
-    // ±âº» ±¸Çö »ı·« (ÇĞ±³ Á¦°ø ÄÚµå ·ÎÁ÷ ÁØ¼ö)
+    // ê¸°ë³¸ êµ¬í˜„ ìƒëµ 
     return 0;
 }
