@@ -9,4 +9,4 @@
 #define MAX_DIE                     6    
 #define MAX_PLAYER                  10   
 
-#endif 
+#endif /* smm_common_h */ 
